@@ -37,19 +37,22 @@ public class SKTAudio {
   public func playBackgroundMusic(filename: String) {
     let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
     if (url == nil) {
-      println("Could not find file: \(filename)")
+      print("Could not find file: \(filename)")
       return
     }
-
-    var error: NSError? = nil
-    backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if let player = backgroundMusicPlayer {
-      player.numberOfLoops = -1
-      player.prepareToPlay()
-      player.play()
-    } else {
-      println("Could not create audio player: \(error!)")
-    }
+    do {
+        let error: NSError? = nil
+        try backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: url!)
+        if let player = backgroundMusicPlayer {
+          player.numberOfLoops = -1
+          player.prepareToPlay()
+          player.play()
+        } else {
+          print("Could not create audio player: \(error!)")
+        }
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
   }
 
   public func pauseBackgroundMusic() {
@@ -71,20 +74,23 @@ public class SKTAudio {
   public func playSoundEffect(filename: String) {
     let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
     if (url == nil) {
-      println("Could not find file: \(filename)")
+      print("Could not find file: \(filename)")
       return
     }
-
-    var error: NSError? = nil
-    soundEffectPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    if let player = soundEffectPlayer {
-      player.numberOfLoops = 0
-      player.prepareToPlay()
-      player.play()
-    } else {
-      println("Could not create audio player: \(error!)")
+    do {
+        let error: NSError? = nil
+        try soundEffectPlayer = AVAudioPlayer(contentsOfURL: url!)
+        if let player = soundEffectPlayer {
+          player.numberOfLoops = 0
+          player.prepareToPlay()
+          player.play()
+        } else {
+          print("Could not create audio player: \(error!)")
+        }
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
     }
-  }
 }
 
 private let SKTAudioInstance = SKTAudio()

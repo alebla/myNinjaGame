@@ -58,21 +58,21 @@ public extension Int {
   /**
    * Returns a random integer in the specified range.
    */
-  public static func random(range: Range<Int>) -> Int {
+  public static func randomRange(range: Range<Int>) -> Int {
     return Int(arc4random_uniform(UInt32(range.endIndex - range.startIndex))) + range.startIndex
   }
 
   /**
    * Returns a random integer between 0 and n-1.
    */
-  public static func random(n: Int) -> Int {
+  public static func randomInt(n: Int) -> Int {
     return Int(arc4random_uniform(UInt32(n)))
   }
 
   /**
    * Returns a random integer in the range min...max, inclusive.
    */
-  public static func random(#min: Int, max: Int) -> Int {
+  public static func randomIntWithMinAndMax(min: Int, max: Int) -> Int {
     assert(min < max)
     return Int(arc4random_uniform(UInt32(max - min + 1))) + min
   }
