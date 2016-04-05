@@ -62,11 +62,7 @@
 		203E5F2B1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
 		203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
 		203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F2E1CA9060500308A36 /* iOS_Responder.swift */; };
-		203E5F301CA9060500308A36 /* iOS_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F2E1CA9060500308A36 /* iOS_Responder.swift */; };
-		203E5F311CA9060500308A36 /* iOS_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F2E1CA9060500308A36 /* iOS_Responder.swift */; };
-		203E5F331CA9061900308A36 /* OSX_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F321CA9061900308A36 /* OSX_Responder.swift */; };
 		203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F321CA9061900308A36 /* OSX_Responder.swift */; };
-		203E5F351CA9061900308A36 /* OSX_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F321CA9061900308A36 /* OSX_Responder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -478,7 +474,6 @@
 				203E5F1B1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */,
 				203E5F031CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
-				203E5F331CA9061900308A36 /* OSX_Responder.swift in Sources */,
 				203E5F241CA900E700308A36 /* Vector3.swift in Sources */,
 				203E5EA31CA8889900308A36 /* AppDelegate.swift in Sources */,
 			);
@@ -500,7 +495,6 @@
 				203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */,
 				203E5F1F1CA900E700308A36 /* SKTEffects.swift in Sources */,
 				203E5EBF1CA88B6300308A36 /* AppDelegate.swift in Sources */,
-				203E5F301CA9060500308A36 /* iOS_Responder.swift in Sources */,
 				203E5F221CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				203E5F251CA900E700308A36 /* Vector3.swift in Sources */,
 				203E5F0D1CA900E700308A36 /* Int+Extensions.swift in Sources */,
@@ -516,13 +510,11 @@
 				203E5F0B1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */,
 				203E5EDA1CA88FFD00308A36 /* GameViewController.swift in Sources */,
-				203E5F351CA9061900308A36 /* OSX_Responder.swift in Sources */,
 				203E5F111CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				203E5F171CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
 				203E5F261CA900E700308A36 /* Vector3.swift in Sources */,
 				203E5F1D1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				203E5F051CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
-				203E5F311CA9060500308A36 /* iOS_Responder.swift in Sources */,
 				203E5F0E1CA900E700308A36 /* Int+Extensions.swift in Sources */,
 				203E5F231CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				203E5F1A1CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
@@ -755,6 +747,7 @@
 				203E5EB71CA8889A00308A36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		203E5ECA1CA88B6300308A36 /* Build configuration list for PBXNativeTarget "myNinjaGameOSX" */ = {
 			isa = XCConfigurationList;
@@ -763,6 +756,7 @@
 				203E5ECC1CA88B6300308A36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		203E5EE31CA88FFD00308A36 /* Build configuration list for PBXNativeTarget "myNinjaGameTVOS" */ = {
 			isa = XCConfigurationList;
@@ -771,6 +765,7 @@
 				203E5EE51CA88FFD00308A36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
