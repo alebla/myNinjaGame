@@ -63,6 +63,15 @@
 		203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
 		203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F2E1CA9060500308A36 /* iOS_Responder.swift */; };
 		203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F321CA9061900308A36 /* OSX_Responder.swift */; };
+		20F57CAF1CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
+		20F57CB01CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
+		20F57CB11CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
+		20F57CB31CB39AD20095015F /* SGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CB21CB39AD20095015F /* SGExtensions.swift */; };
+		20F57CB41CB39AD20095015F /* SGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CB21CB39AD20095015F /* SGExtensions.swift */; };
+		20F57CB51CB39AD20095015F /* SGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CB21CB39AD20095015F /* SGExtensions.swift */; };
+		20F57CBB1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
+		20F57CBC1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
+		20F57CBD1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +111,9 @@
 		203E5F291CA9029400308A36 /* SGScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGScene.swift; sourceTree = "<group>"; };
 		203E5F2E1CA9060500308A36 /* iOS_Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS_Responder.swift; sourceTree = "<group>"; };
 		203E5F321CA9061900308A36 /* OSX_Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSX_Responder.swift; sourceTree = "<group>"; };
+		20F57CAE1CB399AD0095015F /* SGResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGResolution.swift; sourceTree = "<group>"; };
+		20F57CB21CB39AD20095015F /* SGExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGExtensions.swift; sourceTree = "<group>"; };
+		20F57CBA1CB39C020095015F /* SGGameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGameSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,7 @@
 			children = (
 				203E5F281CA9010A00308A36 /* SG-Controllers */,
 				203E5F271CA900FF00308A36 /* SG-Engine */,
+				203E5F291CA9029400308A36 /* SGScene.swift */,
 				203E5EF21CA9008500308A36 /* SKUtils */,
 			);
 			name = Libraries;
@@ -304,8 +317,9 @@
 		203E5F271CA900FF00308A36 /* SG-Engine */ = {
 			isa = PBXGroup;
 			children = (
+				20F57CAE1CB399AD0095015F /* SGResolution.swift */,
+				20F57CB21CB39AD20095015F /* SGExtensions.swift */,
 				203E5F2D1CA905D600308A36 /* SGSceneResponders */,
-				203E5F291CA9029400308A36 /* SGScene.swift */,
 			);
 			name = "SG-Engine";
 			sourceTree = "<group>";
@@ -313,6 +327,7 @@
 		203E5F281CA9010A00308A36 /* SG-Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				20F57CBA1CB39C020095015F /* SGGameSettings.swift */,
 			);
 			name = "SG-Controllers";
 			sourceTree = "<group>";
@@ -468,10 +483,13 @@
 				203E5F091CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5F0F1CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				203E5F151CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
+				20F57CAF1CB399AD0095015F /* SGResolution.swift in Sources */,
 				203E5EA91CA8889A00308A36 /* GameViewController.swift in Sources */,
 				203E5F0C1CA900E700308A36 /* Int+Extensions.swift in Sources */,
+				20F57CBB1CB39C020095015F /* SGGameSettings.swift in Sources */,
 				203E5F181CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
 				203E5F1B1CA900E700308A36 /* SKTAudio.swift in Sources */,
+				20F57CB31CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */,
 				203E5F031CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F241CA900E700308A36 /* Vector3.swift in Sources */,
@@ -483,8 +501,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F57CBC1CB39C020095015F /* SGGameSettings.swift in Sources */,
 				203E5F0A1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5F1C1CA900E700308A36 /* SKTAudio.swift in Sources */,
+				20F57CB41CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F041CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F191CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
 				203E5F2B1CA9029400308A36 /* SGScene.swift in Sources */,
@@ -494,6 +514,7 @@
 				203E5F101CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */,
 				203E5F1F1CA900E700308A36 /* SKTEffects.swift in Sources */,
+				20F57CB01CB399AD0095015F /* SGResolution.swift in Sources */,
 				203E5EBF1CA88B6300308A36 /* AppDelegate.swift in Sources */,
 				203E5F221CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				203E5F251CA900E700308A36 /* Vector3.swift in Sources */,
@@ -505,8 +526,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F57CBD1CB39C020095015F /* SGGameSettings.swift in Sources */,
 				203E5F141CA900E700308A36 /* SKAction+SpecialEffects.swift in Sources */,
 				203E5F201CA900E700308A36 /* SKTEffects.swift in Sources */,
+				20F57CB51CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F0B1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */,
 				203E5EDA1CA88FFD00308A36 /* GameViewController.swift in Sources */,
@@ -516,6 +539,7 @@
 				203E5F1D1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				203E5F051CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F0E1CA900E700308A36 /* Int+Extensions.swift in Sources */,
+				20F57CB11CB399AD0095015F /* SGResolution.swift in Sources */,
 				203E5F231CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				203E5F1A1CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
 				203E5F081CA900E700308A36 /* CGPoint+Extensions.swift in Sources */,
