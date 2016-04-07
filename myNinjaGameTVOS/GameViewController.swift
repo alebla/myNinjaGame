@@ -10,24 +10,20 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    
+    let scene = GameScene(size: CGSize(width: 1363, height: 768))
+    var skView: SKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed: "GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+        
+        skView = self.view as! SKView
+        
+        if GameSettings.Debugging.ALL_TellMeStatus {
+            skView.showsFPS = GameSettings.Debugging.ALL_ShowFrameRate
+            skView.showsNodeCount = GameSettings.Debugging.ALL_ShowNodeCount
         }
+    
     }
 
     override func didReceiveMemoryWarning() {

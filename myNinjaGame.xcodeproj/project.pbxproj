@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		203E5EA31CA8889900308A36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA21CA8889900308A36 /* AppDelegate.swift */; };
-		203E5EA51CA8889A00308A36 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 203E5EA41CA8889A00308A36 /* GameScene.sks */; };
 		203E5EA71CA8889A00308A36 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA61CA8889A00308A36 /* GameScene.swift */; };
 		203E5EA91CA8889A00308A36 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA81CA8889A00308A36 /* GameViewController.swift */; };
 		203E5EAC1CA8889A00308A36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203E5EAA1CA8889A00308A36 /* Main.storyboard */; };
@@ -59,8 +58,6 @@
 		203E5F251CA900E700308A36 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F021CA900E700308A36 /* Vector3.swift */; };
 		203E5F261CA900E700308A36 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F021CA900E700308A36 /* Vector3.swift */; };
 		203E5F2A1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
-		203E5F2B1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
-		203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
 		203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F2E1CA9060500308A36 /* iOS_Responder.swift */; };
 		203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F321CA9061900308A36 /* OSX_Responder.swift */; };
 		20F57CAF1CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
@@ -72,12 +69,13 @@
 		20F57CBB1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
 		20F57CBC1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
 		20F57CBD1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
+		20F57CBE1CB3A0960095015F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA61CA8889A00308A36 /* GameScene.swift */; };
+		20F57CBF1CB3A0B00095015F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA61CA8889A00308A36 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		203E5E9F1CA8889900308A36 /* myNinjaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNinjaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E5EA21CA8889900308A36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		203E5EA41CA8889A00308A36 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = myNinjaGame/GameScene.sks; sourceTree = "<group>"; };
 		203E5EA61CA8889A00308A36 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = myNinjaGame/GameScene.swift; sourceTree = "<group>"; };
 		203E5EA81CA8889A00308A36 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		203E5EAB1CA8889A00308A36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				203E5EEB1CA8ADAB00308A36 /* Entities */,
 				203E5EE81CA8AD7300308A36 /* Components */,
 				203E5EED1CA8ADDC00308A36 /* Scenes */,
-				203E5EA41CA8889A00308A36 /* GameScene.sks */,
 				203E5EA61CA8889A00308A36 /* GameScene.swift */,
 			);
 			name = SharedGame;
@@ -441,7 +438,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203E5EA51CA8889A00308A36 /* GameScene.sks in Resources */,
 				203E5EB11CA8889A00308A36 /* LaunchScreen.storyboard in Resources */,
 				203E5EAE1CA8889A00308A36 /* Assets.xcassets in Resources */,
 				203E5EAC1CA8889A00308A36 /* Main.storyboard in Resources */,
@@ -502,12 +498,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F57CBC1CB39C020095015F /* SGGameSettings.swift in Sources */,
+				20F57CBE1CB3A0960095015F /* GameScene.swift in Sources */,
 				203E5F0A1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5F1C1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				20F57CB41CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F041CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F191CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
-				203E5F2B1CA9029400308A36 /* SGScene.swift in Sources */,
 				203E5F131CA900E700308A36 /* SKAction+SpecialEffects.swift in Sources */,
 				203E5F161CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
 				203E5F071CA900E700308A36 /* CGPoint+Extensions.swift in Sources */,
@@ -527,11 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F57CBD1CB39C020095015F /* SGGameSettings.swift in Sources */,
+				20F57CBF1CB3A0B00095015F /* GameScene.swift in Sources */,
 				203E5F141CA900E700308A36 /* SKAction+SpecialEffects.swift in Sources */,
 				203E5F201CA900E700308A36 /* SKTEffects.swift in Sources */,
 				20F57CB51CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F0B1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
-				203E5F2C1CA9029400308A36 /* SGScene.swift in Sources */,
 				203E5EDA1CA88FFD00308A36 /* GameViewController.swift in Sources */,
 				203E5F111CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				203E5F171CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
