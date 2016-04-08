@@ -96,6 +96,11 @@
 		20E680151CB7585A009B49E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20E680141CB7585A009B49E2 /* Localizable.strings */; };
 		20E680161CB7585A009B49E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20E680141CB7585A009B49E2 /* Localizable.strings */; };
 		20E680171CB7585A009B49E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20E680141CB7585A009B49E2 /* Localizable.strings */; };
+		20F1EEEF1CB7735D00913372 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1EEEE1CB7735D00913372 /* MainMenu.swift */; };
+		20F1EEF01CB7735D00913372 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1EEEE1CB7735D00913372 /* MainMenu.swift */; };
+		20F1EEF11CB7735D00913372 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1EEEE1CB7735D00913372 /* MainMenu.swift */; };
+		20F1EEF21CB77F2E00913372 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
+		20F1EEF31CB77F2E00913372 /* SGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5F291CA9029400308A36 /* SGScene.swift */; };
 		20F57CAF1CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
 		20F57CB01CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
 		20F57CB11CB399AD0095015F /* SGResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CAE1CB399AD0095015F /* SGResolution.swift */; };
@@ -161,6 +166,7 @@
 		20E680111CB757EC009B49E2 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		20E680121CB757EC009B49E2 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/Main.strings"; sourceTree = "<group>"; };
 		20E680141CB7585A009B49E2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		20F1EEEE1CB7735D00913372 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		20F57CAE1CB399AD0095015F /* SGResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGResolution.swift; sourceTree = "<group>"; };
 		20F57CB21CB39AD20095015F /* SGExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGExtensions.swift; sourceTree = "<group>"; };
 		20F57CBA1CB39C020095015F /* SGGameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGameSettings.swift; sourceTree = "<group>"; };
@@ -261,7 +267,6 @@
 				203E5EEB1CA8ADAB00308A36 /* Entities */,
 				203E5EE81CA8AD7300308A36 /* Components */,
 				203E5EED1CA8ADDC00308A36 /* Scenes */,
-				203E5EA61CA8889A00308A36 /* GameScene.swift */,
 			);
 			name = SharedGame;
 			sourceTree = "<group>";
@@ -271,7 +276,6 @@
 			children = (
 				203E5F281CA9010A00308A36 /* SG-Controllers */,
 				203E5F271CA900FF00308A36 /* SG-Engine */,
-				203E5F291CA9029400308A36 /* SGScene.swift */,
 				203E5EF21CA9008500308A36 /* SKUtils */,
 			);
 			name = Libraries;
@@ -312,6 +316,8 @@
 		203E5EED1CA8ADDC00308A36 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				203E5EA61CA8889A00308A36 /* GameScene.swift */,
+				20F1EEEE1CB7735D00913372 /* MainMenu.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 		203E5F271CA900FF00308A36 /* SG-Engine */ = {
 			isa = PBXGroup;
 			children = (
+				203E5F291CA9029400308A36 /* SGScene.swift */,
 				20F57CAE1CB399AD0095015F /* SGResolution.swift */,
 				20F57CB21CB39AD20095015F /* SGExtensions.swift */,
 				203E5F2D1CA905D600308A36 /* SGSceneResponders */,
@@ -587,6 +594,7 @@
 				203E5F181CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
 				203E5F1B1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				20F57CB31CB39AD20095015F /* SGExtensions.swift in Sources */,
+				20F1EEEF1CB7735D00913372 /* MainMenu.swift in Sources */,
 				203E5F2F1CA9060500308A36 /* iOS_Responder.swift in Sources */,
 				203E5F031CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F241CA900E700308A36 /* Vector3.swift in Sources */,
@@ -605,6 +613,8 @@
 				20F57CB41CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F041CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F191CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
+				20F1EEF01CB7735D00913372 /* MainMenu.swift in Sources */,
+				20F1EEF21CB77F2E00913372 /* SGScene.swift in Sources */,
 				203E5F131CA900E700308A36 /* SKAction+SpecialEffects.swift in Sources */,
 				203E5F161CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
 				203E5F071CA900E700308A36 /* CGPoint+Extensions.swift in Sources */,
@@ -630,6 +640,8 @@
 				20F57CB51CB39AD20095015F /* SGExtensions.swift in Sources */,
 				203E5F0B1CA900E700308A36 /* CGVector+Extensions.swift in Sources */,
 				203E5EDA1CA88FFD00308A36 /* GameViewController.swift in Sources */,
+				20F1EEF11CB7735D00913372 /* MainMenu.swift in Sources */,
+				20F1EEF31CB77F2E00913372 /* SGScene.swift in Sources */,
 				203E5F111CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				203E5F171CA900E700308A36 /* SKColor+Extensions.swift in Sources */,
 				203E5F261CA900E700308A36 /* Vector3.swift in Sources */,
