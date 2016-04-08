@@ -22,8 +22,32 @@ class GameViewController: UIViewController {
         if GameSettings.Debugging.ALL_TellMeStatus {
             skView.showsFPS = GameSettings.Debugging.ALL_ShowFrameRate
             skView.showsNodeCount = GameSettings.Debugging.ALL_ShowNodeCount
+            skView.showsDrawCount = GameSettings.Debugging.IOS_ShowDrawCount
+            skView.showsQuadCount = GameSettings.Debugging.IOS_ShowQuadCount
+            skView.showsPhysics = GameSettings.Debugging.IOS_ShowPhysics
+            skView.showsFields = GameSettings.Debugging.IOS_ShowFields
         }
+        
+        skView.ignoresSiblingOrder = true
+        
+        scene.scaleMode = .AspectFill
+        
+        _ = SGResolution(screenSize: view.bounds.size, canvasSize: scene.size)
+        
+        skView.presentScene(scene)
     
+    }
+    
+    override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        if (skView.scene != nil){
+            skView.scene!.pressesBegan(presses, withEvent: event)
+        }
+    }
+    
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        if (skView.scene != nil) {
+            skView.scene!.pressesEnded(presses, withEvent: event)
+        }
     }
 
     override func didReceiveMemoryWarning() {
