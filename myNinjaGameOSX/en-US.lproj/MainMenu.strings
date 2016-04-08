@@ -1,0 +1,60 @@
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
+"5.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
+"19.title" = "Window";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */
+"24.title" = "Window";
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "myNinjaGameOSX"; ObjectID = "56"; */
+"56.title" = "myNinjaGameOSX";
+
+/* Class = "NSMenu"; title = "myNinjaGameOSX"; ObjectID = "57"; */
+"57.title" = "myNinjaGameOSX";
+
+/* Class = "NSMenuItem"; title = "About myNinjaGameOSX"; ObjectID = "58"; */
+"58.title" = "About myNinjaGameOSX";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Hide myNinjaGameOSX"; ObjectID = "134"; */
+"134.title" = "Hide myNinjaGameOSX";
+
+/* Class = "NSMenuItem"; title = "Quit myNinjaGameOSX"; ObjectID = "136"; */
+"136.title" = "Quit myNinjaGameOSX";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */
+"239.title" = "Zoom";
+
+/* Class = "NSWindow"; title = "myNinjaGameOSX"; ObjectID = "371"; */
+"371.title" = "myNinjaGameOSX";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "490"; */
+"490.title" = "Help";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "491"; */
+"491.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "myNinjaGameOSX Help"; ObjectID = "492"; */
+"492.title" = "myNinjaGameOSX Help";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "537"; */
+"537.title" = "Minimize";

@@ -32,6 +32,7 @@ class GameViewController: UIViewController {
         
         scene.scaleMode = .AspectFill
         
+        
         _ = SGResolution(screenSize: view.bounds.size, canvasSize: scene.size)
         
         skView.presentScene(scene)

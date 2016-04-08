@@ -38,7 +38,7 @@ class SGScene: SKScene {
     }
     
     //Localisation
-    func lt(key: String) -> String{
-        return NSLocalizedString(key, comment: "")
+    func lt(text: String) -> String{
+        return NSLocalizedString(text, comment: "")
     }
 }
