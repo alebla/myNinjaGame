@@ -22,6 +22,9 @@
 		2030B6051CE04087009E9A68 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030B6041CE04087009E9A68 /* AnimationComponent.swift */; };
 		2030B6061CE04087009E9A68 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030B6041CE04087009E9A68 /* AnimationComponent.swift */; };
 		2030B6071CE04087009E9A68 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030B6041CE04087009E9A68 /* AnimationComponent.swift */; };
+		2030B6091CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2030B6081CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 */; };
+		2030B60A1CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2030B6081CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 */; };
+		2030B60B1CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2030B6081CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 */; };
 		203538DE1CDF71E200863D2D /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203538DD1CDF71E200863D2D /* ParallaxComponent.swift */; };
 		203538DF1CDF71E200863D2D /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203538DD1CDF71E200863D2D /* ParallaxComponent.swift */; };
 		203538E01CDF71E200863D2D /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203538DD1CDF71E200863D2D /* ParallaxComponent.swift */; };
@@ -87,9 +90,6 @@
 		20B70A7C1CBC7D7A0015FC0A /* GameBuildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B70A7B1CBC7D7A0015FC0A /* GameBuildMode.swift */; };
 		20B70A7D1CBC7D7A0015FC0A /* GameBuildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B70A7B1CBC7D7A0015FC0A /* GameBuildMode.swift */; };
 		20B70A7E1CBC7D7A0015FC0A /* GameBuildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B70A7B1CBC7D7A0015FC0A /* GameBuildMode.swift */; };
-		20E67FE41CB73551009B49E2 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE31CB73551009B49E2 /* background_music.mp3 */; };
-		20E67FE51CB73551009B49E2 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE31CB73551009B49E2 /* background_music.mp3 */; };
-		20E67FE61CB73551009B49E2 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE31CB73551009B49E2 /* background_music.mp3 */; };
 		20E67FED1CB73560009B49E2 /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE71CB73560009B49E2 /* button_click.wav */; };
 		20E67FEE1CB73560009B49E2 /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE71CB73560009B49E2 /* button_click.wav */; };
 		20E67FEF1CB73560009B49E2 /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20E67FE71CB73560009B49E2 /* button_click.wav */; };
@@ -153,6 +153,7 @@
 		2004F4EB1CB88D98000D1480 /* TileMapBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapBuilder.swift; sourceTree = "<group>"; };
 		2030B6001CE039BC009E9A68 /* PlayerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		2030B6041CE04087009E9A68 /* AnimationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
+		2030B6081CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Title_Music_Dope(Opening).mp3"; sourceTree = "<group>"; };
 		203538DD1CDF71E200863D2D /* ParallaxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
 		203E5E9F1CA8889900308A36 /* myNinjaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNinjaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E5EA21CA8889900308A36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,7 +193,6 @@
 		20B70A721CBAF56A0015FC0A /* TileMapLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapLevels.swift; sourceTree = "<group>"; };
 		20B70A761CBAF7D80015FC0A /* TileLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayer.swift; sourceTree = "<group>"; };
 		20B70A7B1CBC7D7A0015FC0A /* GameBuildMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBuildMode.swift; sourceTree = "<group>"; };
-		20E67FE31CB73551009B49E2 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		20E67FE71CB73560009B49E2 /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
 		20E67FE81CB73560009B49E2 /* collect_good.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = collect_good.wav; sourceTree = "<group>"; };
 		20E67FE91CB73560009B49E2 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 		203E5EF01CA8AE1600308A36 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				20E67FE31CB73551009B49E2 /* background_music.mp3 */,
+				2030B6081CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -574,11 +574,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E67FFC1CB73560009B49E2 /* title_drop.wav in Resources */,
-				20E67FE41CB73551009B49E2 /* background_music.mp3 in Resources */,
 				20E6800C1CB73584009B49E2 /* Tiles.atlas in Resources */,
 				20E67FED1CB73560009B49E2 /* button_click.wav in Resources */,
 				20E67FF01CB73560009B49E2 /* collect_good.wav in Resources */,
 				203E5EB11CA8889A00308A36 /* LaunchScreen.storyboard in Resources */,
+				2030B6091CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */,
 				20E67FF31CB73560009B49E2 /* impact.wav in Resources */,
 				203E5EAE1CA8889A00308A36 /* Assets.xcassets in Resources */,
 				20E680061CB73584009B49E2 /* LargeMedia.xcassets in Resources */,
@@ -603,9 +603,9 @@
 				20E67FF11CB73560009B49E2 /* collect_good.wav in Resources */,
 				20E67FEE1CB73560009B49E2 /* button_click.wav in Resources */,
 				203E5EC51CA88B6300308A36 /* Assets.xcassets in Resources */,
+				2030B60A1CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */,
 				20E680071CB73584009B49E2 /* LargeMedia.xcassets in Resources */,
 				20E67FF41CB73560009B49E2 /* impact.wav in Resources */,
-				20E67FE51CB73551009B49E2 /* background_music.mp3 in Resources */,
 				203E5EC81CA88B6300308A36 /* MainMenu.xib in Resources */,
 				20E67FFD1CB73560009B49E2 /* title_drop.wav in Resources */,
 				20E67FFA1CB73560009B49E2 /* throw.wav in Resources */,
@@ -617,11 +617,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E67FFE1CB73560009B49E2 /* title_drop.wav in Resources */,
-				20E67FE61CB73551009B49E2 /* background_music.mp3 in Resources */,
 				20E6800E1CB73584009B49E2 /* Tiles.atlas in Resources */,
 				20E67FEF1CB73560009B49E2 /* button_click.wav in Resources */,
 				20E67FF21CB73560009B49E2 /* collect_good.wav in Resources */,
 				203E5EDF1CA88FFD00308A36 /* Main.storyboard in Resources */,
+				2030B60B1CE1CFE6009E9A68 /* Title_Music_Dope(Opening).mp3 in Resources */,
 				20E67FF51CB73560009B49E2 /* impact.wav in Resources */,
 				203E5EE11CA88FFD00308A36 /* Assets.xcassets in Resources */,
 				20E680081CB73584009B49E2 /* LargeMedia.xcassets in Resources */,
