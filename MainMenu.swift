@@ -57,6 +57,21 @@ class MainMenu: SGScene {
     
     override func screenInteractionStarted(location: CGPoint){
         
+        for node in nodesAtPoint(location) {
+            if node.isKindOfClass(SKNode) {
+                
+                if node.name == "playGame" {
+                    buttonEvent("buttonA", velocity: 1.0, pushedOn: true)
+                }
+                
+                #if os(OSX)
+                    if node.name == "exitGame" {
+                        NSApplication.sharedApplication().terminate(self)
+                    }
+                #endif
+            
+            }
+        }
     }
     
     override func screenInteractionMoved(location: CGPoint){
@@ -68,7 +83,13 @@ class MainMenu: SGScene {
     }
     
     override func buttonEvent(event: String, velocity: Float, pushedOn: Bool){
-        
+        if event == "buttonA" {
+            self.runAction(sndButtonClick)
+            let nextScene = GamePlayMode(size: self.scene!.size)
+            nextScene.scaleMode = self.scaleMode
+            self.view?.presentScene(nextScene, transition: SKTransition.fadeWithDuration(0.5))
+            
+        }
     }
     
     override func stickEvent(event: String, point: CGPoint){

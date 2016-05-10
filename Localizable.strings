@@ -1,5 +1,17 @@
 
 "Language" = "English Bitch!";
 "My Ninja Game" = "My Ninija Game";
+
+// Main Menu
+
 "Enter" = "Enter";
 "Exit" = "Exit";
+
+// Build Mode
+
+"Move" = "Move";
+"Add" = "Add";
+"Remove" = "Remove";
+"Zoom Out" = "Zoom Out";
+"Zoom In" = "Zoom In";
+"Print" = "Print";
