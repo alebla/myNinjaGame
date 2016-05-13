@@ -13,6 +13,7 @@ struct Animation {
    let animationState: AnimationState
    let textures: [SKTexture]
    let repeatTexturesForever: Bool
+   let textureSize: CGSize
 }
 
 class AnimationComponent: GKComponent {
@@ -26,7 +27,7 @@ class AnimationComponent: GKComponent {
    
    var requestedAnimationState: AnimationState?
    
-   init(node: SKSpriteNode, textureSize: CGSize, animations: [AnimationState : Animation]) {
+   init(node: SKSpriteNode, animations: [AnimationState : Animation]) {
       self.node = node
       self.animations = animations
    }
@@ -51,6 +52,7 @@ class AnimationComponent: GKComponent {
             timePerFrame: AnimationComponent.timePerFrame)
       }
       
+      node.size = animation.textureSize
       node.runAction(texturesAction, withKey: AnimationComponent.actionKey)
       
       currentAnimation = animation
@@ -68,7 +70,7 @@ class AnimationComponent: GKComponent {
    
    class func animationFromAtlas(atlas: SKTextureAtlas, withImageIdentifier
       identifier: String, forAnimationState animationState: AnimationState,
-      repeatTexturesForever: Bool = true) -> Animation {
+      repeatTexturesForever: Bool = true, textureSize: CGSize) -> Animation {
       let textures = atlas.textureNames.filter {
          $0.containsString("\(identifier)")
          }.sort {
@@ -78,7 +80,8 @@ class AnimationComponent: GKComponent {
       return Animation(
          animationState: animationState,
          textures: textures,
-         repeatTexturesForever: repeatTexturesForever
+         repeatTexturesForever: repeatTexturesForever,
+         textureSize: textureSize
       )
    }
    

@@ -12,8 +12,8 @@ class GameScene: SGScene {
     override func didMoveToView(view: SKView){
         
         // Start Background Music
-        SKTAudio.sharedInstance().playBackgroundMusic("Title_Music_Dope(Opening).mp3")
-        SKTAudio.sharedInstance().backgroundMusicPlayer?.volume = 0.1
+        //SKTAudio.sharedInstance().playBackgroundMusic("Title_Music_Dope(Opening).mp3")
+        //SKTAudio.sharedInstance().backgroundMusicPlayer?.volume = 0.1
         
         //TODO find better bg music. Doesn't fit the mood/theme
         

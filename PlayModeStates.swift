@@ -20,11 +20,14 @@ class GameSceneState: GKState {
 class GameSceneInitialState: GameSceneState {
    override func didEnterWithPreviousState(previousState: GKState?) {
       // Delegates
+      gs.physicsWorld.contactDelegate = gs
+      gs.physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.0)
       
       // Camera
       let myCamera = SKCameraNode()
       gs.camera = myCamera
       gs.addChild(myCamera)
+      gs.camera?.setScale(0.44)
       
       // Layers
       
@@ -52,6 +55,20 @@ class GameSceneInitialState: GameSceneState {
       let background06 = BackgroundEntity(movementFactor: CGPoint(x: -90.0, y: 0.0), image: SKTexture(imageNamed: "BG003"), size: SKMSceneSize!, position: CGPoint(x: SKMSceneSize!.width, y: 0), reset: true)
       background06.spriteComponent.node.zPosition = GameSettings.GameParams.zValues.zBackground03
       gs.addEntity(background06, toLayer: gs.backgroundLayer)
+      
+      let characters = ["Male", "Female"]
+      let atlas = SKTextureAtlas(named: characters[gs.characterIndex])
+      
+      if let playerPlaceholder = gs.worldLayer.childNodeWithName("placeholder_StartPoint") {
+         let player = PlayerEntity(position: playerPlaceholder.position, size: CGSize(width: 25.4,height: 48.0), firstFrame: atlas.textureNamed("Idle_000"), atlas: atlas)
+         player.spriteComponent.node.anchorPoint = CGPoint(x:0.5, y:0.0)
+         player.spriteComponent.node.zPosition = GameSettings.GameParams.zValues.zPlayer
+         player.animationComponent.requestedAnimationState = .Run
+         gs.centerCameraOnPoint(playerPlaceholder.position)
+         gs.addEntity(player, toLayer: gs.worldLayer)
+      } else {
+         fatalError("Play Mode: No placeholder for player!")
+      }
       
    }
    
