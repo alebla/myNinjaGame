@@ -90,10 +90,6 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
          componentSystem.updateWithDeltaTime(deltaTime)
       }
       
-      if let player = worldLayer.childNodeWithName("playerNode"){
-         centerCameraOnPoint(player.position)
-      }
-      
    }
    
    //MARK: Responders
@@ -116,4 +112,40 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    override func stickEvent(event: String, point: CGPoint){
       
    }
+   
+   //MARK: Camera Settings
+   
+   func setCameraConstraints() {
+      guard let camera = camera else { return }
+      
+      if let player = worldLayer.childNodeWithName("playerNode") as? EntityNode {
+         
+         let zeroRange = SKRange(constantValue: 0.0)
+         let playerNode = player
+         let playerLocationConstraint = SKConstraint.distance(zeroRange, toNode: playerNode)
+         
+         let scaledSize = CGSize(width: SKMViewSize!.width * camera.xScale, height: SKMViewSize!.height * camera.yScale)
+         
+         let boardContentRect = worldLayer.calculateAccumulatedFrame()
+         
+         let xInset = min((scaledSize.width / 2), boardContentRect.width / 2)
+         let yInset = min((scaledSize.height / 2), boardContentRect.height / 2)
+         
+         let insetContentRect = boardContentRect.insetBy(dx: xInset, dy: yInset)
+         
+         let xRange = SKRange(lowerLimit: insetContentRect.minX, upperLimit: insetContentRect.maxX)
+         let yRange = SKRange(lowerLimit: insetContentRect.minY, upperLimit: insetContentRect.maxY)
+         
+         let levelEdgeConstraint = SKConstraint.positionX(xRange, y: yRange)
+         levelEdgeConstraint.referenceNode = worldLayer
+         
+         camera.constraints = [playerLocationConstraint, levelEdgeConstraint]
+      }
+      
+   }
+   
+   
+   
+   
+   
 }

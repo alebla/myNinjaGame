@@ -27,7 +27,7 @@ class PlayerEntity: GKEntity {
       
       physicsComponent = PhysicsComponent(entity: self, bodySize: spriteComponent.node.size, bodyShape: .squareOffset, rotation: false)
       physicsComponent.setCategoryBitmask(ColliderType.Player.rawValue, dynamic: true)
-      physicsComponent.setPhysicsCollisions(ColliderType.Wall.rawValue)
+      physicsComponent.setPhysicsCollisions(ColliderType.Wall.rawValue | ColliderType.Destroyable.rawValue)
       physicsComponent.setPhysicsContacts(ColliderType.Collectable.rawValue | ColliderType.EndLevel.rawValue)
       addComponent(physicsComponent)
       

@@ -11,7 +11,7 @@ import GameplayKit
 
 class SideScrollComponent: GKComponent {
    
-   var movementSpeed = CGPoint(x: 100.0, y: 0.0)
+   var movementSpeed = CGPoint(x: 90.0, y: 0.0)
    
    var spriteComponent: SpriteComponent {
       guard let spriteComponent = entity?.componentForClass(SpriteComponent.self) else {fatalError("Sprite Component not found")}

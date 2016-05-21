@@ -66,6 +66,7 @@ class GameSceneInitialState: GameSceneState {
          player.animationComponent.requestedAnimationState = .Run
          gs.centerCameraOnPoint(playerPlaceholder.position)
          gs.addEntity(player, toLayer: gs.worldLayer)
+         gs.setCameraConstraints()
       } else {
          fatalError("Play Mode: No placeholder for player!")
       }

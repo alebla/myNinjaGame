@@ -46,6 +46,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tileGround:
@@ -67,6 +73,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tileWallLeft:
@@ -75,6 +87,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tileGroundMiddle:
@@ -114,6 +132,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .bottomOutLine, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tileGroundCornerLU:
@@ -130,6 +154,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tileCeilingLeft:
@@ -138,6 +168,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tilePlatformLeft:
@@ -146,6 +182,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          addChild(node)
          break
       case .tilePlatform:
@@ -154,6 +196,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+
          addChild(node)
          break
       case .tilePlatformRight:
@@ -163,6 +211,13 @@ class TileLayer: SKNode, tileMapDelegate {
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
          addChild(node)
+
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+
+         
          break
       case .tileCeilingRight:
          
@@ -170,6 +225,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.size = CGSize(width: 32, height: 32)
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
+
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Wall.rawValue, dynamic: false)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+
          addChild(node)
          break
       case .tileWaterSurface:
@@ -221,6 +282,12 @@ class TileLayer: SKNode, tileMapDelegate {
          node.position = location
          node.zPosition = GameSettings.GameParams.zValues.zWorld
          addChild(node)
+         
+         let physicsComponent = PhysicsComponent(entity: GKEntity(), bodySize: node.size, bodyShape: .square, rotation: false)
+         physicsComponent.setCategoryBitmask(ColliderType.Destroyable.rawValue, dynamic: true)
+         physicsComponent.setPhysicsCollisions(ColliderType.Player.rawValue | ColliderType.Wall.rawValue | ColliderType.Destroyable.rawValue)
+         node.physicsBody = physicsComponent.physicsBody
+         
          break
       case .tileGem:
          
