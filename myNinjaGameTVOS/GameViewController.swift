@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-    
+    // TV functionality very limited. Fix Later
     let scene = GameScene(size: CGSize(width: 1363, height: 768))
     var skView: SKView!
 
