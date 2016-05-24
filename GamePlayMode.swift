@@ -17,8 +17,6 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    let jumpButtonSnd = SKAction.playSoundFileNamed("jump_1.wav", waitForCompletion: true)
    let impactSnd = SKAction.playSoundFileNamed("impact_1.wav", waitForCompletion: true)
 
-
-   
    // Initial Data
    var characterIndex = 0
    var levelIndex = 0
@@ -109,7 +107,9 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    override func screenInteractionStarted(location: CGPoint){
       if let node = nodeAtPoint(location) as? SKLabelNode {
          if node.name == "PauseButton" {
-            runAction(sndButtonClick)
+            if node.name == "PauseButton"{
+               runAction(sndButtonClick)
+            }
             if pauseLoop {
                stateMachine.enterState(GameSceneActiveState.self)
             } else {
@@ -118,6 +118,7 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
             return
          }
       }
+      runAction(jumpButtonSnd)
       control.jumpPressed = true
    }
    

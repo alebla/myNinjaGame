@@ -9,15 +9,19 @@
 import SpriteKit
 import GameplayKit
 
-class PlayerEntity: GKEntity {
+class PlayerEntity: SGEntity  {
    
    var spriteComponent: SpriteComponent!
    var animationComponent: AnimationComponent!
    var physicsComponent: PhysicsComponent!
    var scrollerComponent: SideScrollComponent!
    
-   init(position: CGPoint, size: CGSize, firstFrame: SKTexture, atlas: SKTextureAtlas) {
+   var gameScene: GamePlayMode!
+   
+   init(position: CGPoint, size: CGSize, firstFrame: SKTexture, atlas: SKTextureAtlas, scene: GamePlayMode) {
       super.init()
+      
+      gameScene = scene
       
       //Initialize Components
       spriteComponent = SpriteComponent(entity: self, texture: SKTexture(), size: size, position: position)
@@ -36,6 +40,8 @@ class PlayerEntity: GKEntity {
       
       spriteComponent.node.physicsBody = physicsComponent.physicsBody
       spriteComponent.node.name = "playerNode"
+      
+      name = "playerEntity"
    }
    
    func loadAnimations(textureAtlas: SKTextureAtlas) -> [AnimationState: Animation] {
@@ -52,6 +58,18 @@ class PlayerEntity: GKEntity {
          forAnimationState: .IdleThrow, repeatTexturesForever: false, textureSize: CGSize(width: 40.1, height: 48.0))
       
       return animations
+   }
+   
+   override func contactWith(entity: SGEntity) {
+      if entity.name == "finishEntity" {
+         gameScene.stateMachine.enterState(GameSceneWinState.self)
+      }
+      
+      if entity.name == "gemEntity" {
+         if let spriteComponent = entity.componentForClass(SpriteComponent.self) {
+            spriteComponent.node.removeFromParent()
+         }
+      }
    }
    
    

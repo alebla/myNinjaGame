@@ -28,6 +28,8 @@ class SideScrollComponentSystem: GKComponentSystem {
 
 class SideScrollComponent: GKComponent {
    
+   let jumpButtonSnd = SKAction.playSoundFileNamed("jump_1.wav", waitForCompletion: true)
+   let impactSnd = SKAction.playSoundFileNamed("impact_1.wav", waitForCompletion: true)
    var movementSpeed = CGPoint(x: 90.0, y: 0.0)
    
    //State

@@ -76,7 +76,7 @@ class GameSceneInitialState: GameSceneState {
       //Setup UI
       let pauseButton = SKLabelNode(fontNamed: "MarkerFelt-Wide")
       pauseButton.posByScreen(0.46, y: 0.42)
-      pauseButton.fontSize = 40
+      pauseButton.fontSize = 80
       pauseButton.text = gs.lt("II")
       pauseButton.fontColor = SKColor.whiteColor()
       pauseButton.zPosition = 150

@@ -145,6 +145,12 @@
 		20F57CBD1CB39C020095015F /* SGGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F57CBA1CB39C020095015F /* SGGameSettings.swift */; };
 		20F57CBE1CB3A0960095015F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA61CA8889A00308A36 /* GameScene.swift */; };
 		20F57CBF1CB3A0B00095015F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E5EA61CA8889A00308A36 /* GameScene.swift */; };
+		20F60B0D1CF421E700D5500C /* SGEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B0C1CF421E700D5500C /* SGEntity.swift */; };
+		20F60B0E1CF421E700D5500C /* SGEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B0C1CF421E700D5500C /* SGEntity.swift */; };
+		20F60B0F1CF421E700D5500C /* SGEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B0C1CF421E700D5500C /* SGEntity.swift */; };
+		20F60B111CF423BE00D5500C /* GemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B101CF423BE00D5500C /* GemEntity.swift */; };
+		20F60B121CF423BE00D5500C /* GemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B101CF423BE00D5500C /* GemEntity.swift */; };
+		20F60B131CF423BE00D5500C /* GemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60B101CF423BE00D5500C /* GemEntity.swift */; };
 		20F840541CDF0D86001F8326 /* BackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F840531CDF0D86001F8326 /* BackgroundEntity.swift */; };
 		20F840551CDF0D86001F8326 /* BackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F840531CDF0D86001F8326 /* BackgroundEntity.swift */; };
 		20F840561CDF0D86001F8326 /* BackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F840531CDF0D86001F8326 /* BackgroundEntity.swift */; };
@@ -220,6 +226,8 @@
 		20F57CAE1CB399AD0095015F /* SGResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGResolution.swift; sourceTree = "<group>"; };
 		20F57CB21CB39AD20095015F /* SGExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGExtensions.swift; sourceTree = "<group>"; };
 		20F57CBA1CB39C020095015F /* SGGameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGameSettings.swift; sourceTree = "<group>"; };
+		20F60B0C1CF421E700D5500C /* SGEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGEntity.swift; sourceTree = "<group>"; };
+		20F60B101CF423BE00D5500C /* GemEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GemEntity.swift; sourceTree = "<group>"; };
 		20F840531CDF0D86001F8326 /* BackgroundEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundEntity.swift; sourceTree = "<group>"; };
 		20F840571CDF0ED6001F8326 /* SpriteComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +366,8 @@
 			children = (
 				20F840531CDF0D86001F8326 /* BackgroundEntity.swift */,
 				2030B6001CE039BC009E9A68 /* PlayerEntity.swift */,
+				20F60B0C1CF421E700D5500C /* SGEntity.swift */,
+				20F60B101CF423BE00D5500C /* GemEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -654,6 +664,7 @@
 				203538DE1CDF71E200863D2D /* ParallaxComponent.swift in Sources */,
 				203E5F2A1CA9029400308A36 /* SGScene.swift in Sources */,
 				203E5EA71CA8889A00308A36 /* GameScene.swift in Sources */,
+				20F60B0D1CF421E700D5500C /* SGEntity.swift in Sources */,
 				203E5F061CA900E700308A36 /* CGPoint+Extensions.swift in Sources */,
 				203E5F211CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				203E5F1E1CA900E700308A36 /* SKTEffects.swift in Sources */,
@@ -674,6 +685,7 @@
 				2030B6011CE039BC009E9A68 /* PlayerEntity.swift in Sources */,
 				20B70A731CBAF56A0015FC0A /* TileMapLevels.swift in Sources */,
 				20F57CBB1CB39C020095015F /* SGGameSettings.swift in Sources */,
+				20F60B111CF423BE00D5500C /* GemEntity.swift in Sources */,
 				203E5F181CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
 				2059941F1CE5DB1D00DAC62D /* SideScrollMovement.swift in Sources */,
 				203E5F1B1CA900E700308A36 /* SKTAudio.swift in Sources */,
@@ -712,12 +724,14 @@
 				203E5F071CA900E700308A36 /* CGPoint+Extensions.swift in Sources */,
 				2030B6021CE039BC009E9A68 /* PlayerEntity.swift in Sources */,
 				20B70A741CBAF56A0015FC0A /* TileMapLevels.swift in Sources */,
+				20F60B121CF423BE00D5500C /* GemEntity.swift in Sources */,
 				203E5F101CA900E700308A36 /* SKAction+Extensions.swift in Sources */,
 				20F840551CDF0D86001F8326 /* BackgroundEntity.swift in Sources */,
 				203E5F341CA9061900308A36 /* OSX_Responder.swift in Sources */,
 				203E5F1F1CA900E700308A36 /* SKTEffects.swift in Sources */,
 				20F57CB01CB399AD0095015F /* SGResolution.swift in Sources */,
 				203538DF1CDF71E200863D2D /* ParallaxComponent.swift in Sources */,
+				20F60B0E1CF421E700D5500C /* SGEntity.swift in Sources */,
 				203E5EBF1CA88B6300308A36 /* AppDelegate.swift in Sources */,
 				20B70A781CBAF7D80015FC0A /* TileLayer.swift in Sources */,
 				203E5F221CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
@@ -752,12 +766,14 @@
 				203E5F261CA900E700308A36 /* Vector3.swift in Sources */,
 				2030B6031CE039BC009E9A68 /* PlayerEntity.swift in Sources */,
 				20B70A751CBAF56A0015FC0A /* TileMapLevels.swift in Sources */,
+				20F60B131CF423BE00D5500C /* GemEntity.swift in Sources */,
 				203E5F1D1CA900E700308A36 /* SKTAudio.swift in Sources */,
 				20F840561CDF0D86001F8326 /* BackgroundEntity.swift in Sources */,
 				203E5F051CA900E700308A36 /* CGFloat+Extensions.swift in Sources */,
 				203E5F0E1CA900E700308A36 /* Int+Extensions.swift in Sources */,
 				20F57CB11CB399AD0095015F /* SGResolution.swift in Sources */,
 				203538E01CDF71E200863D2D /* ParallaxComponent.swift in Sources */,
+				20F60B0F1CF421E700D5500C /* SGEntity.swift in Sources */,
 				203E5F231CA900E700308A36 /* SKTTimingFunctions.swift in Sources */,
 				20B70A791CBAF7D80015FC0A /* TileLayer.swift in Sources */,
 				203E5F1A1CA900E700308A36 /* SKNode+Extensions.swift in Sources */,
