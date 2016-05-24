@@ -34,7 +34,9 @@ class GameSceneInitialState: GameSceneState {
       gs.worldLayer = TileLayer(levelIndex: gs.levelIndex, typeIndex: .setMain)
       gs.addChild(gs.worldLayer)
       gs.backgroundLayer = SKNode()
+      gs.overlayGUI = SKNode()
       myCamera.addChild(gs.backgroundLayer)
+      myCamera.addChild(gs.overlayGUI)
       
       //Initial Entities
       let background01 = BackgroundEntity(movementFactor: CGPoint(x: -20.0, y: 0.0), image: SKTexture(imageNamed: "BG001"), size: SKMSceneSize!, position: CGPointZero, reset: true)
@@ -71,6 +73,16 @@ class GameSceneInitialState: GameSceneState {
          fatalError("Play Mode: No placeholder for player!")
       }
       
+      //Setup UI
+      let pauseButton = SKLabelNode(fontNamed: "MarkerFelt-Wide")
+      pauseButton.posByScreen(0.46, y: 0.42)
+      pauseButton.fontSize = 40
+      pauseButton.text = gs.lt("II")
+      pauseButton.fontColor = SKColor.whiteColor()
+      pauseButton.zPosition = 150
+      pauseButton.name = "PauseButton"
+      gs.overlayGUI.addChild(pauseButton)
+      
    }
    
    override func willExitWithNextState(nextState: GKState) {
@@ -83,6 +95,16 @@ class GameSceneActiveState: GameSceneState {
 }
 
 class GameScenePausedState: GameSceneState {
+   
+   override func didEnterWithPreviousState(previousState: GKState?) {
+      gs.paused = true
+      gs.pauseLoop = true
+   }
+   
+   override func willExitWithNextState(nextState: GKState) {
+      gs.paused = false
+      gs.pauseLoop = false
+   }
    
 }
 

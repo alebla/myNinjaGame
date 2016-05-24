@@ -22,6 +22,7 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    // Layers
    var worldLayer: TileLayer!
    var backgroundLayer: SKNode!
+   var overlayGUI: SKNode!
    
    // State Machine
    lazy var stateMachine: GKStateMachine = GKStateMachine(states: [
@@ -40,9 +41,10 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    lazy var componentSystems: [GKComponentSystem] = {
       let parallaxSystem = GKComponentSystem(componentClass: ParallaxComponent.self)
       let animationSystem = GKComponentSystem(componentClass: AnimationComponent.self)
-      let scrollerSystem = GKComponentSystem(componentClass: SideScrollComponent.self)
-      return [parallaxSystem, animationSystem, scrollerSystem]
+      return [parallaxSystem, animationSystem]
    }()
+   let scrollerSystem = SideScrollComponentSystem(componentClass: SideScrollComponent.self)
+
    
    // Timers
    
@@ -51,6 +53,8 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    var lastDeltaTime: NSTimeInterval = 0
    
    // Controls
+   var control = ControlScheme()
+   var pauseLoop = false
    
    // Sounds
    
@@ -73,36 +77,50 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
       for componentSystem in self.componentSystems {
          componentSystem.addComponentWithEntity(entity)
       }
+      scrollerSystem.addComponentWithEntity(entity)
    }
    
    //MARK: Life Cycle
    
    override func update(currentTime: NSTimeInterval) {
       
-      // Calculate delta time
-      var deltaTime = currentTime - lastUpdateTimeInterval
-      deltaTime = deltaTime > maximumUpdateDeltaTime ?
-         maximumUpdateDeltaTime : deltaTime
-      lastUpdateTimeInterval = currentTime
-      
-      // Update Components
-      for componentSystem in componentSystems {
-         componentSystem.updateWithDeltaTime(deltaTime)
+      if !pauseLoop {
+         // Calculate delta time
+         var deltaTime = currentTime - lastUpdateTimeInterval
+         deltaTime = deltaTime > maximumUpdateDeltaTime ?
+            maximumUpdateDeltaTime : deltaTime
+         lastUpdateTimeInterval = currentTime
+         
+         // Update Components
+         for componentSystem in componentSystems {
+            componentSystem.updateWithDeltaTime(deltaTime)
+         }
+         scrollerSystem.updateWithDeltaTime(deltaTime, controlInput: control)
       }
-      
    }
    
    //MARK: Responders
    override func screenInteractionStarted(location: CGPoint){
+      if let node = nodeAtPoint(location) as? SKLabelNode {
+         if node.name == "PauseButton" {
+            if pauseLoop {
+               stateMachine.enterState(GameSceneActiveState.self)
+            } else {
+               stateMachine.enterState(GameScenePausedState.self)
+            }
+            return
+         }
+      }
       
+      control.jumpPressed = true
    }
    
    override func screenInteractionMoved(location: CGPoint){
-      
+      control.jumpPressed = false
    }
    
    override func screenInteractionEnded(location: CGPoint){
-      
+      control.jumpPressed = false
    }
    
    override func buttonEvent(event: String, velocity: Float, pushedOn: Bool){

@@ -9,7 +9,7 @@ var gameSounds: Array<SKAction>?
 enum AnimationState: String {
    case Idle = "Idle_"
    case Dead = "Dead_"
-   case Jump = "Jump_"
+   case Jump = "Jump__"
    case JumpThrow = "Jump_Throw_"
    case Run = "Run_"
    case Slide = "Slide_"

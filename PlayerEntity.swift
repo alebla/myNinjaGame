@@ -25,7 +25,7 @@ class PlayerEntity: GKEntity {
       animationComponent = AnimationComponent(node: spriteComponent.node, animations: loadAnimations(atlas))
       addComponent(animationComponent)
       
-      physicsComponent = PhysicsComponent(entity: self, bodySize: spriteComponent.node.size, bodyShape: .squareOffset, rotation: false)
+      physicsComponent = PhysicsComponent(entity: self, bodySize: CGSize(width: spriteComponent.node.size.width * 0.8, height: spriteComponent.node.size.height * 0.8), bodyShape: .squareOffset, rotation: false)
       physicsComponent.setCategoryBitmask(ColliderType.Player.rawValue, dynamic: true)
       physicsComponent.setPhysicsCollisions(ColliderType.Wall.rawValue | ColliderType.Destroyable.rawValue)
       physicsComponent.setPhysicsContacts(ColliderType.Collectable.rawValue | ColliderType.EndLevel.rawValue)
@@ -43,11 +43,13 @@ class PlayerEntity: GKEntity {
       
       animations[.Jump] = AnimationComponent.animationFromAtlas(textureAtlas,
          withImageIdentifier: AnimationState.Jump.rawValue,
-         forAnimationState: .Jump, repeatTexturesForever: false, textureSize: CGSize(width: 23.5, height: 48.0))
+         forAnimationState: .Jump, repeatTexturesForever: false, textureSize: CGSize(width: 40.1, height: 48.0))
       animations[.Run] = AnimationComponent.animationFromAtlas(textureAtlas,
          withImageIdentifier: AnimationState.Run.rawValue,
          forAnimationState: .Run, repeatTexturesForever: true, textureSize: CGSize(width: 37.93, height: 48.0))
-      animations[.IdleThrow] = AnimationComponent.animationFromAtlas(textureAtlas, withImageIdentifier: AnimationState.IdleThrow.rawValue, forAnimationState: .IdleThrow, textureSize: CGSize(width: 40.1, height: 48.0))
+      animations[.IdleThrow] = AnimationComponent.animationFromAtlas(textureAtlas,
+         withImageIdentifier: AnimationState.IdleThrow.rawValue,
+         forAnimationState: .IdleThrow, repeatTexturesForever: false, textureSize: CGSize(width: 40.1, height: 48.0))
       
       return animations
    }
