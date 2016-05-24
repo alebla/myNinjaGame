@@ -13,8 +13,8 @@ import SpriteKit
 
 class MainMenu: SGScene {
     
-    let sndTitleDrop = SKAction.playSoundFileNamed("title_drop.wav", waitForCompletion: false)
-    let sndButtonClick = SKAction.playSoundFileNamed("button_click.wav", waitForCompletion: false)
+    let sndTitleDrop = SKAction.playSoundFileNamed("title_drop_1.wav", waitForCompletion: false)
+    let sndButtonClick = SKAction.playSoundFileNamed("button_click_1.wav", waitForCompletion: false)
     
     override func didMoveToView(view: SKView) {
         
