@@ -62,7 +62,7 @@ class GameSceneInitialState: GameSceneState {
       let atlas = SKTextureAtlas(named: characters[gs.characterIndex])
       
       if let playerPlaceholder = gs.worldLayer.childNodeWithName("placeholder_StartPoint") {
-         let player = PlayerEntity(position: playerPlaceholder.position, size: CGSize(width: 25.4,height: 48.0), firstFrame: atlas.textureNamed("Idle_000"), atlas: atlas)
+         let player = PlayerEntity(position: playerPlaceholder.position, size: CGSize(width: 25.4,height: 48.0), firstFrame: atlas.textureNamed("Idle_000"), atlas: atlas, scene: gs)
          player.spriteComponent.node.anchorPoint = CGPoint(x:0.5, y:0.0)
          player.spriteComponent.node.zPosition = GameSettings.GameParams.zValues.zPlayer
          player.animationComponent.requestedAnimationState = .Run
@@ -71,6 +71,18 @@ class GameSceneInitialState: GameSceneState {
          gs.setCameraConstraints()
       } else {
          fatalError("Play Mode: No placeholder for player!")
+      }
+      
+      gs.worldLayer.enumerateChildNodesWithName("placeholder_FinishPoint") { (node, stop) -> Void in
+         let finish = FinishEntity(position: node.position, size: CGSize(width: 32, height: 32), texture: SKTexture())
+         self.gs.addEntity(finish, toLayer: self.gs.worldLayer)
+      }
+      
+      let tileAtlas = SKTextureAtlas(named: "Tiles")
+      gs.worldLayer.enumerateChildNodesWithName("placeholder_Gem") { (node, stop) -> Void in
+         let gem = GemEntity(position: node.position, size: CGSize(width: 32, height: 32), texture: tileAtlas.textureNamed("gem"))
+         gem.spriteComponent.node.zPosition = GameSettings.GameParams.zValues.zWorldFront
+         self.gs.addEntity(gem, toLayer: self.gs.worldLayer)
       }
       
       //Setup UI
@@ -113,7 +125,12 @@ class GameSceneVictorySeqState: GameSceneState {
 }
 
 class GameSceneWinState: GameSceneState {
-   
+   override func didEnterWithPreviousState(previousState: GKState?) {
+      //TODO - temp link to main menu
+      let nextScene = MainMenu(size: gs.scene!.size)
+      nextScene.scaleMode = gs.scaleMode
+      gs.view?.presentScene(nextScene)
+   }
 }
 
 class GameSceneLosesState: GameSceneState {

@@ -138,6 +138,25 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
       
    }
    
+   //MARK: Physics Delegate 
+   
+   func didBeginContact(contact: SKPhysicsContact) {
+      
+      if let bodyA = contact.bodyA.node as? EntityNode,
+        let bodyAent = bodyA.entity as? SGEntity,
+        let bodyB = contact.bodyB.node as? EntityNode,
+        let bodyBent = bodyB.entity as? SGEntity
+      {
+         contactBegan(bodyAent, nodeB: bodyBent)
+         contactBegan(bodyBent, nodeB: bodyAent)
+      }
+      
+   }
+   
+   func contactBegan(nodeA: SGEntity, nodeB: SGEntity){
+      nodeA.contactWith(nodeB)
+   }
+   
    //MARK: Camera Settings
    
    func setCameraConstraints() {

@@ -85,7 +85,7 @@ class MainMenu: SGScene {
     override func buttonEvent(event: String, velocity: Float, pushedOn: Bool){
         if event == "buttonA" {
             self.runAction(sndButtonClick)
-            let nextScene = GamePlayMode(size: self.scene!.size)
+            let nextScene = CharSelect(size: self.scene!.size)
             nextScene.scaleMode = self.scaleMode
             self.view?.presentScene(nextScene, transition: SKTransition.fadeWithDuration(0.5))
             

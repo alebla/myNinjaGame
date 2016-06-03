@@ -68,8 +68,13 @@ class SideScrollComponent: GKComponent {
          spriteComponent.node.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: (seconds * 25)))
       }
       if spriteComponent.node.physicsBody?.allContactedBodies().count > 0 {
-         isJumping = false
-         animationComponent.requestedAnimationState = .Run
+         for body in (spriteComponent.node.physicsBody?.allContactedBodies())! {
+            let nodeDir = ((body.node?.position)! - spriteComponent.node.position).angle
+            if (nodeDir > -2.355 && nodeDir < -0.785) {
+               isJumping = false
+               animationComponent.requestedAnimationState = .Run
+            }
+         }
       }
       
    }
