@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class EntityNode: SKSpriteNode {
+class EntityNode: SKSpriteNode  {
     weak var entity: GKEntity!
 }
 

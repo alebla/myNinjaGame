@@ -13,15 +13,13 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    
    //MARK: Instance Variables
    
-   let sndButtonClick = SKAction.playSoundFileNamed("button_click_1.wav", waitForCompletion: false)
-   let jumpButtonSnd = SKAction.playSoundFileNamed("jump_1.wav", waitForCompletion: true)
-   let impactSnd = SKAction.playSoundFileNamed("impact_1.wav", waitForCompletion: true)
-
    // Initial Data
    var characterIndex = 0
    var levelIndex = 0
    
-   // Generators
+   //Level Data
+   var gemsCollected = 0
+   var worldFrame = CGRect()
    
    // Layers
    var worldLayer: TileLayer!
@@ -45,10 +43,10 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    lazy var componentSystems: [GKComponentSystem] = {
       let parallaxSystem = GKComponentSystem(componentClass: ParallaxComponent.self)
       let animationSystem = GKComponentSystem(componentClass: AnimationComponent.self)
-      return [parallaxSystem, animationSystem]
+      let scrollerSystem = GKComponentSystem(componentClass: ChaseScrollComponent.self)
+      return [parallaxSystem, animationSystem, scrollerSystem]
    }()
    let scrollerSystem = SideScrollComponentSystem(componentClass: SideScrollComponent.self)
-
    
    // Timers
    
@@ -61,6 +59,13 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    var pauseLoop = false
    
    // Sounds
+   let sndCollectGood = SKAction.playSoundFileNamed("collect_good_1.wav", waitForCompletion: false)
+   let sndButtonClick = SKAction.playSoundFileNamed("button_click_1.wav", waitForCompletion: false)
+   let sndJump = SKAction.playSoundFileNamed("jump_1.wav", waitForCompletion: true)
+   let sndImpact = SKAction.playSoundFileNamed("impact_1.wav", waitForCompletion: true)
+   let sndDeathScreen = SKAction.playSoundFileNamed("deathscreen.wav", waitForCompletion: false)
+   let sndPause = SKAction.playSoundFileNamed("pause.wav", waitForCompletion: false)
+   let sndWin = SKAction.playSoundFileNamed("boomshakalaka.wav", waitForCompletion: false)
    
    //Mark: Initializer
    override func didMoveToView(view: SKView) {
@@ -95,11 +100,18 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
             maximumUpdateDeltaTime : deltaTime
          lastUpdateTimeInterval = currentTime
          
+         //Update Entities
+         for entity in entities {
+            entity.updateWithDeltaTime(deltaTime)
+         }
+         
          // Update Components
          for componentSystem in componentSystems {
             componentSystem.updateWithDeltaTime(deltaTime)
          }
          scrollerSystem.updateWithDeltaTime(deltaTime, controlInput: control)
+      }else {
+         self.runAction(sndPause)
       }
    }
    
@@ -107,9 +119,6 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    override func screenInteractionStarted(location: CGPoint){
       if let node = nodeAtPoint(location) as? SKLabelNode {
          if node.name == "PauseButton" {
-            if node.name == "PauseButton"{
-               runAction(sndButtonClick)
-            }
             if pauseLoop {
                stateMachine.enterState(GameSceneActiveState.self)
             } else {
@@ -118,7 +127,6 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
             return
          }
       }
-      runAction(jumpButtonSnd)
       control.jumpPressed = true
    }
    
@@ -137,7 +145,38 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
    override func stickEvent(event: String, point: CGPoint){
       
    }
+   #if !os(OSX)
+   override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      for press in presses {
+         switch press.type {
+         case .Select:
+            control.jumpPressed = true
+            break
+         case .PlayPause:
+            if pauseLoop {
+               stateMachine.enterState(GameScenePausedState.self)
+            } else {
+               stateMachine.enterState(GameSceneActiveState.self)
+            }
+            break
+         default:
+            break
+         }
+      }
+   }
    
+   override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      control.jumpPressed = false
+   }
+   
+   override func pressesCancelled(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      control.jumpPressed = false
+   }
+   
+   override func pressesChanged(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      control.jumpPressed = false
+   }
+   #endif
    //MARK: Physics Delegate 
    
    func didBeginContact(contact: SKPhysicsContact) {
@@ -170,7 +209,7 @@ class GamePlayMode: SGScene, SKPhysicsContactDelegate {
          
          let scaledSize = CGSize(width: SKMViewSize!.width * camera.xScale, height: SKMViewSize!.height * camera.yScale)
          
-         let boardContentRect = worldLayer.calculateAccumulatedFrame()
+         let boardContentRect = worldFrame
          
          let xInset = min((scaledSize.width / 2), boardContentRect.width / 2)
          let yInset = min((scaledSize.height / 2), boardContentRect.height / 2)

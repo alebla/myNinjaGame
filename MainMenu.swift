@@ -95,6 +95,13 @@ class MainMenu: SGScene {
     override func stickEvent(event: String, point: CGPoint){
         
     }
-
+   #if !os(OSX)
+   override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      self.runAction(sndButtonClick)
+      let nextScene = CharSelect(size: self.scene!.size)
+      nextScene.scaleMode = self.scaleMode
+      self.view?.presentScene(nextScene)
+   }
+   #endif
     
 }

@@ -10,6 +10,8 @@ import SpriteKit
 
 class CharSelect: SGScene {
    
+   let sndButtonClick = SKAction.playSoundFileNamed("button_click_1.wav", waitForCompletion: false)
+   
    override func didMoveToView(view: SKView) {
       
       let background = SKSpriteNode(imageNamed: "BG")
@@ -60,6 +62,7 @@ class CharSelect: SGScene {
       for node in nodesAtPoint(location) {
          if let nodeName = node.name {
             if nodeName.hasPrefix("C") {
+               self.runAction(sndButtonClick)
                let nextScene = LevelSelect(size: self.scene!.size)
                nextScene.characterIndex = node.userData!["Index"] as! Int
                nextScene.scaleMode = self.scaleMode
@@ -68,6 +71,28 @@ class CharSelect: SGScene {
          }
       }
    }
-   
-   
+   #if !os(OSX)
+   override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      for press in presses {
+         switch press.type {
+         case .LeftArrow:
+            self.runAction(sndButtonClick)
+            let nextScene = LevelSelect(size: self.scene!.size)
+            nextScene.characterIndex = 0
+            nextScene.scaleMode = self.scaleMode
+            self.view?.presentScene(nextScene)
+            break
+         case .RightArrow:
+            self.runAction(sndButtonClick)
+            let nextScene = LevelSelect(size: self.scene!.size)
+            nextScene.scaleMode = self.scaleMode
+            nextScene.characterIndex = 1
+            self.view?.presentScene(nextScene)
+            break
+         default:
+            break
+         }
+      }
+   }
+   #endif
 }

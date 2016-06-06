@@ -13,6 +13,8 @@ class LevelSelect: SGScene {
    var characterIndex = 0
    var levelLayer = SKNode()
    
+   //Sounds
+   let sndButtonClick = SKAction.playSoundFileNamed("button_click_1.wav", waitForCompletion: false)
    
    override func didMoveToView(view: SKView) {
       let background = SKSpriteNode(imageNamed: "BG")
@@ -52,7 +54,7 @@ class LevelSelect: SGScene {
       var currentY = 0
       var lastAvail = false
       
-      for (index, level) in tileMapLevels.MainSet.enumerate() {
+      for (index, _) in tileMapLevels.MainSet.enumerate() {
          var available: Bool
          if !(index == 0) {
             available = NSUserDefaults.standardUserDefaults().boolForKey("Level_\(index)")
@@ -85,13 +87,13 @@ class LevelSelect: SGScene {
             gem.position = CGPoint(x: (-(sign.size.width / 3) + ((sign.size.width / 3) * CGFloat(gems))) as CGFloat , y: 0.0)
             gem.zPosition = 22
             sign.addChild(gem)
-            gems--
+            gems -= 1
          } while gems > 0
          
-         currentX++
+         currentX += 1
          if currentX > Int(gridSize.width) {
             currentX = 0
-            currentY++
+            currentY += 1
          }
          if available {
             lastAvail = true
@@ -108,6 +110,7 @@ class LevelSelect: SGScene {
             let nodeName = theNode.name {
             if nodeName == "LevelSign" {
                if theNode.userData!["Available"] as! Bool == true {
+                  self.runAction(sndButtonClick)
                   let nextScene = GamePlayMode(size: self.scene!.size)
                   nextScene.characterIndex = self.characterIndex
                   nextScene.levelIndex = (theNode.userData!["Index"] as? Int)!
@@ -118,5 +121,14 @@ class LevelSelect: SGScene {
          }
       }
    }
-   
+   #if !os(OSX)
+   override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+      self.runAction(sndButtonClick)
+      let nextScene = GamePlayMode(size: self.scene!.size)
+      nextScene.scaleMode = self.scaleMode
+      nextScene.levelIndex = 0
+      nextScene.characterIndex = self.characterIndex
+      self.view?.presentScene(nextScene)
+   }
+   #endif
 }

@@ -32,7 +32,7 @@ class PlayerEntity: SGEntity  {
       physicsComponent = PhysicsComponent(entity: self, bodySize: CGSize(width: spriteComponent.node.size.width * 0.8, height: spriteComponent.node.size.height * 0.8), bodyShape: .squareOffset, rotation: false)
       physicsComponent.setCategoryBitmask(ColliderType.Player.rawValue, dynamic: true)
       physicsComponent.setPhysicsCollisions(ColliderType.Wall.rawValue | ColliderType.Destroyable.rawValue)
-      physicsComponent.setPhysicsContacts(ColliderType.Collectable.rawValue | ColliderType.EndLevel.rawValue)
+      physicsComponent.setPhysicsContacts(ColliderType.Collectable.rawValue | ColliderType.EndLevel.rawValue | ColliderType.KillZone.rawValue)
       addComponent(physicsComponent)
       
       scrollerComponent = SideScrollComponent(entity: self)
@@ -60,17 +60,38 @@ class PlayerEntity: SGEntity  {
       return animations
    }
    
+   override func updateWithDeltaTime(seconds: NSTimeInterval) {
+      super.updateWithDeltaTime(seconds)
+      
+      if !gameScene.worldFrame.contains(spriteComponent.node.position) {
+         playerDied()
+      }
+   }
+   
    override func contactWith(entity: SGEntity) {
       if entity.name == "finishEntity" {
+         gameScene.runAction(gameScene.sndWin)
          gameScene.stateMachine.enterState(GameSceneWinState.self)
       }
       
       if entity.name == "gemEntity" {
          if let spriteComponent = entity.componentForClass(SpriteComponent.self) {
             spriteComponent.node.removeFromParent()
+            gameScene.gemsCollected += 1
+            gameScene.runAction(gameScene.sndCollectGood)
          }
       }
+      
+      if entity.name == "killZoneEntity" {
+         playerDied()
+         gameScene.runAction(gameScene.sndDeathScreen)
+      }
+      
    }
    
+   func playerDied() {
+      
+      gameScene.stateMachine.enterState(GameSceneLosesState.self)
+   }
    
 }

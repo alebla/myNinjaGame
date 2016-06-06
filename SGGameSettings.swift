@@ -25,6 +25,7 @@ enum ColliderType: UInt32 {
    case EndLevel        = 0b1000
    case Projectile      = 0b10000
    case None            = 0b100000
+   case KillZone        = 0b1000000
 }
 
 struct GameSettings {
